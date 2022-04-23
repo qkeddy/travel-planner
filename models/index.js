@@ -8,10 +8,10 @@ Location.belongsToMany(Traveler, {
     through: {
         model: Trip,
         unique: false,
-        foreignKey: "traveler_id",
     },
     // Define an alias for when data is retrieved
     as: "location_travelers",
+    // foreignKey: "traveler_id",
 });
 
 // A trip can have many travelers
@@ -20,10 +20,10 @@ Traveler.belongsToMany(Location, {
     through: {
         model: Trip,
         unique: false,
-        foreignKey: "location_id",
     },
     // Define an alias for when data is retrieved
     as: "planned_trips",
+    // foreignKey: "location_id",
 });
 
 module.exports = { Traveler, Location, Trip };
